@@ -1,0 +1,22 @@
+'use strict'
+const array = ['KPI', 120, true, null, 'student', undefined, -15, 2026, false, 305n, 'lecture', 4.5, 'FICE', 0, null, 'exam', 90, true, undefined, '2026', 'group', 18.75, false,]
+const counts = { number: 0, string: 0, boolean: 0, undefined: 0, object: 0 }
+for (const item of array) {
+    const type1 = typeof item
+    if (counts.hasOwnProperty(type1)) {
+        counts[type1]++
+    }
+}
+console.dir(counts)
+
+
+
+const dynamic = {}
+for (const item of array) {
+    const type2 = typeof item
+    if (!dynamic.hasOwnProperty(type2)) {
+        dynamic[type2] = 0
+    }
+    dynamic[type2]++
+}
+console.dir(dynamic)
